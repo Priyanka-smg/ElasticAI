@@ -1,4 +1,19 @@
 # ElasticAI
+How to execute the code ? 
+
+1. Pre- requisites : Download and install Python from the official python website. 
+		     Add python to the path (during installation, select the checkbox)
+		     Install Chromium
+		     Download chromedriver : Download the version that matches the chromium 					     version
+					     Extract the file and place it in a directory, 					     eg: C:\Chromium\Driver\
+		     Install Selenium using pip install selenium
+5. Open command prompt. Navigate to where the python file is located. 
+   cd file\path\location 
+6. Run the script 
+   python qa_selenium_test.py
+
+   ---------------------------------------------------------------------------------------------
+   
 1. Importing libraries 
 	a. webdriver --> Enables to control the chrome browser
 	b. by --> a mechanism for locating the elements on the webpage like id, classname or CSS selector)
@@ -37,6 +52,26 @@ except AssertionError as e:
 Regardless of success or failure of the test cases, the browser should be closed. 
 
 10.test_search_functionality() --> Invokes the function to perform the test. 
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Why did I choose this approach ? 
+
+get_driver() functional encapsulates the webdriver which makes it easy to be reused and modified without altering the Logic. 
+test_search_functionality() focuses solely on the test, therefore improves the maintainability. 
+
+Suppose if the test has to be run in a different browser, for eg: firefox, then only Webdriver setup should be updated in one place.
+
+Headless mode : Running Chrome in Headless mode ensures compatibility with CI/CD whereas GUI-based browsers are not available. This approach also reduces the resource usage. 
+Use of Service also makes it work seamlessly on different systems like windows, mac, Linux etc 
+
+Error handling : Try-except-finally blocks ensures that the errors are handled gracefully. 
+
+Instead of manual intervention, the script automates the process, saving time and efforts. 
+
+Script prints the descriptive ,messages, making it easier to debug. 
+
+This script follows principles like re-usability, separation of concerns and proper resource management which adheres to the best practices. 
 
 
 
